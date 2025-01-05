@@ -4,7 +4,7 @@ from transformers import pipeline
 class SentimentModel:
     def __init__(self):
         # Using Hugging Face's pre-trained pipeline
-        self.analyzer = pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english", framework="tf")
+        self.analyzer = pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english", framework="pt")
 
     def predict(self, text: str) -> str:
         # Get predictions
