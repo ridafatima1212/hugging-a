@@ -14,16 +14,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Configure Authentication
-        env:
-          HF: ${{ secrets.HF }}
-        run: |
-          echo "machine huggingface.co login $HF password" > ~/.netrc
-          chmod 600 ~/.netrc
-
       - name: Add Remote
         run: git remote add space https://huggingface.co/spaces/ridaf/sentiment
 
       - name: Push to Hub
+        env:
+          HF: ${{ secrets.HF }}
         run: |
-          git push --force space main
+          git push --force https://user:$HF@huggingface.co/spaces/ridaf/sentiment main
