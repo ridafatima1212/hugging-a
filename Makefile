@@ -1,6 +1,6 @@
 install:
-	pip3 install --upgrade pip &&\
-		pip3 install -r requirements.txt
+	pip3 install --upgrade pip 
+	pip3 install -r requirements.txt
 
 test:
 	python -m pytest -vvv --cov=hello --cov=greeting \
